@@ -1,8 +1,8 @@
-LITECOIND=syscoind
+COIND=Influxd
 S1_FLAGS=
 S2_FLAGS=
-S1=$(LITECOIND) -datadir=1 -daemon=1 $(S1_FLAGS)
-S2=$(LITECOIND) -datadir=2 -daemon=1 $(S2_FLAGS)
+S1=$(COIND) -datadir=1 -daemon=1 $(S1_FLAGS)
+S2=$(COIND) -datadir=2 -daemon=1 $(S2_FLAGS)
 
 start:
 	$(S1)
@@ -31,5 +31,5 @@ stop:
 	$(S2) stop
 
 clean:
-	rm -rf 1/cakenet
-	rm -rf 2/cakenet
+	rm -rf 1/testnet
+	rm -rf 2/testnet
